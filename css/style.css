@@ -8,19 +8,9 @@ body{
 
 .grid {
   margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 320px;
-  max-height: 320px;
+  width: 320px;
+  height: 320px;
   border: 1px solid gray;
-}
-
-.pixels,
-.hoverPixels {
-  min-height: 20px;
-  min-width: 20px;
-}
-
-.hoverPixels {
-  background: black;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
 }
