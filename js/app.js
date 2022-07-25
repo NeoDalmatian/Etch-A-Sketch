@@ -6,3 +6,10 @@ for (let i = 0; i < 256; i++) {
   grid.appendChild(pixel);
 }
 
+const pixels = document.querySelectorAll(".pixels");
+
+pixels.forEach((pixel) => {
+  pixel.addEventListener("mousemove", (e) => {
+      e.target.classList.add("hoverPixels");
+  })
+})

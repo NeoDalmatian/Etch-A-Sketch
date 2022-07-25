@@ -12,11 +12,15 @@ body{
   flex-wrap: wrap;
   max-width: 320px;
   max-height: 320px;
-  background-color: red;
+  border: 1px solid gray;
 }
 
-.pixels {
+.pixels,
+.hoverPixels {
   min-height: 20px;
   min-width: 20px;
+}
+
+.hoverPixels {
   background: black;
 }
