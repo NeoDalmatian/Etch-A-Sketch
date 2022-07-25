@@ -1,4 +1,5 @@
 const grid = document.querySelector(".grid");
+const button = document.querySelector("button");
 
 for (let i = 0; i < 256; i++) {
   const pixel = document.createElement("div");
