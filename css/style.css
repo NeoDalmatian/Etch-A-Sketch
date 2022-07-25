@@ -8,5 +8,14 @@ body{
 
 .grid {
   margin-top: 50px;
-  display: flex;
+  display: grid;
+  max-width: 320px;
+  max-height: 320px;
+  background-color: red;
+}
+
+.pixels {
+  min-height: 20px;
+  min-width: 20px;
+  background: black;
 }
