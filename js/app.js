@@ -5,9 +5,10 @@ let canvasSize = 256;
 let n = 16;
 
 button.addEventListener("click", () => {
-  n = parseInt(prompt("Set canvas size (16-100)"));
+  n = parseInt(prompt("Set canvas size (1-100)"));
+  if (n > 100) return;
   grid.setAttribute("style", `grid-template-columns: repeat(${n}, 1fr);`)
-  canvasSize = (n * n);
+  canvasSize = n * n;
   while (grid.firstChild) {grid.firstChild.remove()};
   drawCanvas();
 })
