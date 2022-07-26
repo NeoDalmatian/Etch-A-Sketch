@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid");
-const button = document.querySelector(".canvas");
+const canvas = document.querySelector(".canvas");
 const rainbow = document.querySelector(".rainbow");
 const black = document.querySelector(".black");
 const grayscale = document.querySelector(".grayscale");
@@ -30,9 +30,9 @@ grayscale.addEventListener("click", () => {
   grayscaleNumber = 255;
 })
 
-button.addEventListener("click", () => {
-  n = parseInt(prompt("Set canvas size (1-100)"));
-  if (n > 100) return;
+canvas.addEventListener("click", () => {
+  n = parseInt(prompt("Set canvas size (0-100)"));
+  if (n < 0 || n > 100) return;
   grid.setAttribute("style", `grid-template-columns: repeat(${n}, 1fr);`)
   canvasSize = n * n;
   while (grid.firstChild) {grid.firstChild.remove()};
