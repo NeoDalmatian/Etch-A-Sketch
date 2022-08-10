@@ -4,8 +4,6 @@ const rainbow = document.querySelector(".rainbow");
 const black = document.querySelector(".black");
 const grayscale = document.querySelector(".grayscale");
 
-let canvasSize = 256;
-let rowSize = 16;
 let grayscaleNumber;
 let rainbowCheck = false;
 let blackCheck = true;
@@ -31,19 +29,19 @@ grayscale.addEventListener("click", () => {
 })
 
 canvas.addEventListener("click", () => {
-  rowSize = parseInt(prompt("Set canvas size (0-100)"));
-  if (rowSize < 0 || rowSize > 100) return;
-  drawNewCanvas();
+  newRowSize = parseInt(prompt("Set canvas size (0-100)"));
+  if (newRowSize < 0 || newRowSize > 100) return;
+  drawCanvas(newRowSize);
 })
 
-function drawNewCanvas () {
-  grid.setAttribute("style", `grid-template-columns: repeat(${rowSize}, 1fr);`)
+function drawNewCanvas (size) {
+  grid.setAttribute("style", `grid-template-columns: repeat(${size}, 1fr);`)
   while (grid.firstChild) grid.firstChild.remove();
-  canvasSize = rowSize * rowSize;
-  drawCanvas();
 }
 
-function drawCanvas () {
+function drawCanvas (rowSize = 16) {
+  canvasSize = rowSize * rowSize;
+  drawNewCanvas(rowSize);
   for (let i = 0; i < canvasSize; i++) {
     const pixel = document.createElement("div");
     pixel.addEventListener("mouseenter", (e) => {
