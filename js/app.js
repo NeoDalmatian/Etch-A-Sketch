@@ -28,17 +28,20 @@ grayscale.addEventListener("click", () => {
   grayscaleNumber = 255;
 })
 
+//Prompt for resizing canvas (0-100)
 canvas.addEventListener("click", () => {
   newRowSize = parseInt(prompt("Set canvas size (0-100)"));
   if (newRowSize < 0 || newRowSize > 100) return;
   drawCanvas(newRowSize);
 })
 
+//Function for making new css grid children and removing old ones
 function drawNewCanvas (size) {
   grid.setAttribute("style", `grid-template-columns: repeat(${size}, 1fr);`)
   while (grid.firstChild) grid.firstChild.remove();
 }
 
+//Function for making initial canvas (16*16) and any other custom sized canvases
 function drawCanvas (rowSize = 16) {
   canvasSize = rowSize * rowSize;
   drawNewCanvas(rowSize);
